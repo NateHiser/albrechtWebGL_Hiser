@@ -1,3 +1,5 @@
+(function() {
+
 var canvas = document.createElement('canvas');
 canvas.width = (window.innerWidth*0.9)*2;
 canvas.height = (window.innerHeight*0.9)*2;
