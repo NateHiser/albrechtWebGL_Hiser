@@ -201,15 +201,12 @@ var animate = function() {
 
 	angle = performance.now() / 1000 / 6 * 2 * Math.PI;
 
-	// Applies the transformations
 	mat4.rotateY(yRotationMatrix, identityMatrix, angle);
 	mat4.rotateX(xRotationMatrix, identityMatrix, angle / 4);
 	mat4.mul(worldMatrix, yRotationMatrix, xRotationMatrix);
 
-	// Sends the updated matrix to the GPU
 	gl.uniformMatrix4fv(matWorldUniformLocation, gl.FALSE, worldMatrix);
 
-	// Actually performs the draw operation
 	gl.drawElements(gl.TRIANGLES, boxIndices.length, gl.UNSIGNED_SHORT, 0);
 
 	requestAnimationFrame(animate);
