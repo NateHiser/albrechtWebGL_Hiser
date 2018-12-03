@@ -12,7 +12,7 @@ if (!gl) {
 	gl = canvas.getContext('experimental-webgl');
 }
 
-if (!gl) {}
+if (!gl) {
 	alert('Your browser does not support WebGl');
 }
 
